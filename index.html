@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Gift</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="box" id="box">
+      <div class="box-tape">
+        <div class="box-tape-left"></div>
+        <div class="box-tape-right"></div>
+        <div class="box-tape-center"></div>
+      </div>
+      <div class="box-gifts">
+        <div class="box-gift-shadow"></div>
+      </div>
+      <div class="box-gift"></div>
+      <div class="box-star box-star-1"></div>
+      <div class="box-star box-star-2"></div>
+      <div class="box-star box-star-3"></div>
+      <div class="box-star box-star-4"></div>
+      <div class="box-star box-star-5"></div>
+    </div>
+
+    <div class="container-carousel" id="containerCarousel">
+      <div class="snow"></div>
+      <div class="carousel" id="carousel">
+        <div class="card" id="cards">
+          <img
+            src="https://media.tenor.com/UcznJ39Oz-UAAAAC/cute-cat-cute-cat-nft.gif"
+            style="width: 60px; padding-bottom: 20px"
+            alt=""
+          />
+          <h1>Hai</h1>
+        </div>
+        <div class="card" id="cards">
+          <img
+            src="https://feeldreams.github.io/peach6.gif"
+            style="width: 60px; padding-bottom: 20px"
+            alt=""
+          />
+          <h1>Hai</h1>
+        </div>
+        <div class="card" id="cards">
+          <img
+            src="https://feeldreams.github.io/peach11.gif"
+            style="width: 60px; padding-bottom: 20px"
+            alt=""
+          />
+          <h1>Hai</h1>
+        </div>
+        <div class="card" id="cards">
+          <img
+            src="https://feeldreams.github.io/peachhug.gif"
+            style="width: 60px; padding-bottom: 20px"
+            alt=""
+          />
+          <h1>Hai</h1>
+        </div>
+        <div class="card" id="lastcards">
+          <img
+            src="/img/love.gif"
+            style="width: 60px; padding-bottom: 20px"
+            alt=""
+            onclick="tampilkanTextBox()"
+          />
+          <h1>Hai</h1>
+        </div>
+        <div class="card" id="textBox" style="display: none;">
+          <div id="textToShow" class="text">yeay begini lagi begini lagi ya bosen ga wwkwkkww, tiap tahun dikasih beginian dengan konsep yang sama</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var boxElement = document.getElementById("box");
+
+        boxElement.addEventListener("click", function () {
+          boxElement.classList.add("fade-out");
+
+          // Menunggu sampai animasi selesai (1 detik)
+          setTimeout(function () {
+            // Redirect ke halaman HTML lain setelah 1 detik
+            carousel.style.display = "grid";
+            containerCarousel.style.display = "block";
+          }, 1500);
+
+          var imageURL = "img/HAECHAN_1.jpg";
+          localStorage.setItem("backgroundImage", imageURL);
+
+          var imageFromLocalStorage = localStorage.getItem("backgroundImage");
+
+          // Setelah animasi selesai (1 detik), ubah background
+          setTimeout(function () {
+            if (imageFromLocalStorage) {
+              document.body.style.backgroundImage = `url(${imageFromLocalStorage})`;
+              imageFromLocalStorage.classList.add("fade");
+            }
+          }, 500);
+        });
+      });
+
+      function tampilkanTextBox() {
+        // Sembunyikan semua card
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          card.style.display = "none";
+        });
+
+        // Tampilkan kotak teks
+        document.getElementById("textBox").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

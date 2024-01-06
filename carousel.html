@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .container{
+            width: 310px;
+        }
+        .carousel{
+            display: grid;
+            grid-auto-flow: column;
+            scroll-behavior: auto;
+            gap: 1.2rem;
+            overflow-y: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .carousel::-webkit-scrollbar{
+            display: none;
+        }
+        .card{
+            scroll-snap-align: start;
+            border-radius: 30px;
+            min-height: 200px;
+            min-width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card:nth-child(odd){
+            background: silver;
+        }
+        .card:nth-child(even){
+            background: silver;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="carousel">
+            <article class="card">
+                <h1>anjay</h1>
+            </article>
+            <article class="card">
+                <h1>luhk</h1>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
