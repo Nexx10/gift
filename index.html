@@ -30,52 +30,73 @@
       <div class="box-star box-star-5"></div>
     </div>
 
+    <!-- <audio id="backgroundMusic" autoplay >
+    <source src="/img/Gellen Martadinata Selamat Ulang Tahun cover by Moyy.mp3" type="audio/mpeg">
+    </audio> -->
+
     <div class="container-carousel" id="containerCarousel">
       <div class="snow"></div>
       <div class="carousel" id="carousel">
         <div class="card" id="cards">
-          <img
+          <h2>klik kotak nya lalu geser pake tombol arrow yaa</h2>
+        </div>
+
+        <div class="card" id="cards">
+           <img
             src="https://media.tenor.com/UcznJ39Oz-UAAAAC/cute-cat-cute-cat-nft.gif"
-            style="width: 60px; padding-bottom: 20px"
+            style="width: 80px; padding-bottom: 20px"
             alt=""
           />
-          <h1>Hai</h1>
+          <h2 class="ucapan">Wayoooo lagi ulang tahunn yaaaa wkkwkwkw</h2>
         </div>
+
         <div class="card" id="cards">
           <img
             src="https://feeldreams.github.io/peach6.gif"
-            style="width: 60px; padding-bottom: 20px"
+            style="width: 80px; padding-bottom: 20px"
             alt=""
           />
-          <h1>Hai</h1>
+          <h2 class="ucapan">Cieee yang lagi ultah, aku ramalll pastii ultah yang ke 19, kenapa aku tau?, ya tau lah because i am your calsu akwokoakw</h2>
         </div>
         <div class="card" id="cards">
           <img
             src="https://feeldreams.github.io/peach11.gif"
-            style="width: 60px; padding-bottom: 20px"
+            style="width: 80px; padding-bottom: 20px"
             alt=""
           />
-          <h1>Hai</h1>
+          <h2 class="ucapan">Lagunya dengerin sampe abis nanti yaa</h2>
         </div>
         <div class="card" id="cards">
-          <img
+          <img 
             src="https://feeldreams.github.io/peachhug.gif"
-            style="width: 60px; padding-bottom: 20px"
+            style="width: 80px; padding-bottom: 20px"
             alt=""
           />
-          <h1>Hai</h1>
+          <h2 class="ucapan">Soalnya diakhir ada sesuatu juga yang mengharuskan lagunya abis dulu 🤫</h2>
         </div>
         <div class="card" id="lastcards">
           <img
             src="/img/love.gif"
-            style="width: 60px; padding-bottom: 20px"
+            style="width: 80px; padding-bottom: 20px"
             alt=""
             onclick="tampilkanTextBox()"
           />
-          <h1>Hai</h1>
+          <h2>Pencet aja love nya gapapa</h2>
         </div>
-        <div class="card" id="textBox" style="display: none;">
-          <div id="textToShow" class="text">yeay begini lagi begini lagi ya bosen ga wwkwkkww, tiap tahun dikasih beginian dengan konsep yang sama</div>
+        <div class="card" id="textBox" style="display: none">
+          <div id="textToShow" class="text">
+           <p class="word word1"> Selamat ulang tahunnnn yang ke 19 sayanggg 🥳❤, semogaa panjangg umurr sehaat selaluuu, dan pastinyaa jadi makin sayangg sama akuuuu wkkwkkwwkwkwk. </p>
+          
+           <p class="word word2">udah gede aja ya tau tau, tapi tetep gedean aku hehe, semoga di umur yang ke 19 tahun ini dilimpahkan segala keberkahan, rezeki, dan ilmu yang bermanfaat, oiyaa sama kesehatan juga, bukan cuma nunggu dikasih tapi juga dijaga yaa, ingat buat selalu jaga kesehatann, jangan ujan-ujanann bandel. </p>
+
+           <p class="word word3">Tahun lalu juga dikasih beginian yaa sama aku wkwkww, sekarang beginian lagi kadonya 😓, maaf yaa belum bisa kasih apa apa buat ulang tahun kamu, cuma bisa kasih ini aja T_T. </p>
+
+           <p class="word word4">Intinya doa terbaik selalu buat kamu, semoga di umur ini banyak lagi impian yang bakal terwujud, banyak keinginan yang tercapai dan bisa menjadi pribadi yang lebih baik dari kemarin, dan menjadi mahasiswa yang keren dan bijaksana akaowkoakw biar bisa nyaleg, eh nyalis aja deh 😝.</p>
+
+           <p class="word word5">Ohh iyaa coba liat ini > <a href="flower.html">apaa yaa ini</a></p>
+
+
+          </div>
         </div>
       </div>
     </div>
@@ -83,8 +104,12 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var boxElement = document.getElementById("box");
+        var audio = new Audio('/img/Gellen Martadinata Selamat Ulang Tahun cover by Moyy.mp3')
 
         boxElement.addEventListener("click", function () {
+
+          audio.play();
+
           boxElement.classList.add("fade-out");
 
           // Menunggu sampai animasi selesai (1 detik)
@@ -110,14 +135,16 @@
       });
 
       function tampilkanTextBox() {
-        // Sembunyikan semua card
         const cards = document.querySelectorAll(".card");
         cards.forEach((card) => {
-          card.style.display = "none";
+          card.classList.add("lastCard");
         });
 
-        // Tampilkan kotak teks
-        document.getElementById("textBox").style.display = "block";
+        setTimeout(function () {
+          const textBox = document.getElementById("textBox");
+          textBox.style.display = "block";
+          textBox.classList.add("textBox2");
+        }, 1500); // Menyesuaikan dengan durasi fadeOut
       }
     </script>
   </body>
